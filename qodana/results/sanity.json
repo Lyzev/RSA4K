@@ -1,0 +1,257 @@
+{"version":"3","listProblem":[{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[NOTHING_TO_OVERRIDE] 'isValid' overrides nothing",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "method",
+      "path": "src/main/kotlin/me/lyzev/rsa/key/types/RSAPublicKey.kt",
+      "language": "kotlin",
+      "line": 12,
+      "offset": 4,
+      "length": 8,
+      "code": {
+        "startLine": 10,
+        "length": 8,
+        "offset": 56,
+        "surroundingCode": "     * 2. The exponent should be at least 3\n     */\n    override fun isValid(): Boolean = exp > 3 && exp < mod.toLong()\n\n    override fun encodeToString(): String {"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "RSA4K.main",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "-3496894855632552419"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: exp",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "method",
+      "path": "src/main/kotlin/me/lyzev/rsa/key/types/RSAPublicKey.kt",
+      "language": "kotlin",
+      "line": 12,
+      "offset": 38,
+      "length": 3,
+      "code": {
+        "startLine": 10,
+        "length": 3,
+        "offset": 90,
+        "surroundingCode": "     * 2. The exponent should be at least 3\n     */\n    override fun isValid(): Boolean = exp > 3 && exp < mod.toLong()\n\n    override fun encodeToString(): String {"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "RSA4K.main",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "-8440644932040128596"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: exp",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "method",
+      "path": "src/main/kotlin/me/lyzev/rsa/key/types/RSAPublicKey.kt",
+      "language": "kotlin",
+      "line": 12,
+      "offset": 49,
+      "length": 3,
+      "code": {
+        "startLine": 10,
+        "length": 3,
+        "offset": 101,
+        "surroundingCode": "     * 2. The exponent should be at least 3\n     */\n    override fun isValid(): Boolean = exp > 3 && exp < mod.toLong()\n\n    override fun encodeToString(): String {"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "RSA4K.main",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "-4239210933162910137"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[FUNCTION_CALL_EXPECTED] Function invocation 'mod(...)' expected",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "method",
+      "path": "src/main/kotlin/me/lyzev/rsa/key/types/RSAPublicKey.kt",
+      "language": "kotlin",
+      "line": 12,
+      "offset": 55,
+      "length": 3,
+      "code": {
+        "startLine": 10,
+        "length": 3,
+        "offset": 107,
+        "surroundingCode": "     * 2. The exponent should be at least 3\n     */\n    override fun isValid(): Boolean = exp > 3 && exp < mod.toLong()\n\n    override fun encodeToString(): String {"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "RSA4K.main",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "-5407201324251161349"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: RSAKey",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "src/main/kotlin/me/lyzev/rsa/key/types/RSAPrivateKey.kt",
+      "language": "kotlin",
+      "line": 3,
+      "offset": 24,
+      "length": 6,
+      "code": {
+        "startLine": 1,
+        "length": 6,
+        "offset": 56,
+        "surroundingCode": "package me.lyzev.rsa.key.types\n\nimport me.lyzev.rsa.key.RSAKey\nimport java.math.BigInteger\n\nclass RSAPrivateKey(mod: BigInteger, exp: Int) : RSAKey(mod, exp) {"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "RSA4K.main",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "6508654330065194768"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: RSAKey",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "class",
+      "path": "src/main/kotlin/me/lyzev/rsa/key/types/RSAPrivateKey.kt",
+      "language": "kotlin",
+      "line": 6,
+      "offset": 49,
+      "length": 6,
+      "code": {
+        "startLine": 4,
+        "length": 6,
+        "offset": 78,
+        "surroundingCode": "import java.math.BigInteger\n\nclass RSAPrivateKey(mod: BigInteger, exp: Int) : RSAKey(mod, exp) {\n\n    override fun isValid(): Boolean {"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "RSA4K.main",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "-1820120320001939539"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[NOTHING_TO_OVERRIDE] 'encodeToString' overrides nothing",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "method",
+      "path": "src/main/kotlin/me/lyzev/rsa/key/types/RSAPrivateKey.kt",
+      "language": "kotlin",
+      "line": 12,
+      "offset": 4,
+      "length": 8,
+      "code": {
+        "startLine": 10,
+        "length": 8,
+        "offset": 11,
+        "surroundingCode": "    }\n\n    override fun encodeToString(): String {\n        TODO(\"Not yet implemented\")\n    }"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "RSA4K.main",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "3934611947156468646"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[NOTHING_TO_OVERRIDE] 'isValid' overrides nothing",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "method",
+      "path": "src/main/kotlin/me/lyzev/rsa/key/types/RSAPrivateKey.kt",
+      "language": "kotlin",
+      "line": 8,
+      "offset": 4,
+      "length": 8,
+      "code": {
+        "startLine": 6,
+        "length": 8,
+        "offset": 73,
+        "surroundingCode": "class RSAPrivateKey(mod: BigInteger, exp: Int) : RSAKey(mod, exp) {\n\n    override fun isValid(): Boolean {\n        return true\n    }"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "RSA4K.main",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "-1379257035032090043"
+}]}
