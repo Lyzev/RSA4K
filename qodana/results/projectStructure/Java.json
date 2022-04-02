@@ -1,0 +1,16 @@
+{
+  "modules": [
+    {
+      "name": "RSA4K",
+      "languageLevel": 16
+    },
+    {
+      "name": "RSA4K.test",
+      "languageLevel": 16
+    },
+    {
+      "name": "RSA4K.main",
+      "languageLevel": 16
+    }
+  ]
+}
