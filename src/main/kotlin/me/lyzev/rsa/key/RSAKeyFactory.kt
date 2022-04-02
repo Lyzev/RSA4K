@@ -13,7 +13,7 @@ object RSAKeyFactory {
     val primes = sieveOfEratosthenes(2000)
 
     fun generateKeyPair(): Pair<RSAPublicKey, RSAPrivateKey> {
-        val random1 = SecureRandom.getInstanceStrong().nextInt(primes!!.size)
+        val random1 = SecureRandom.getInstanceStrong().nextInt(primes.size)
         val random2 = if (SecureRandom.getInstanceStrong().nextBoolean())
             random1 - 1 - SecureRandom.getInstanceStrong().nextInt(random1)
         else

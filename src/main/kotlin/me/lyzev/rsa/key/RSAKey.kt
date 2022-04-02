@@ -14,6 +14,7 @@ abstract class RSAKey(val mod: BigInteger, val exp: Int) {
     abstract fun encodeToString(): String
 
     init {
-        isValid()
+        if (isValid())
+            throw IllegalArgumentException("The provided mod or exp isn't valid. [$mod, $exp]")
     }
 }
