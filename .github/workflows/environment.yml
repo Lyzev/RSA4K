@@ -22,3 +22,18 @@ jobs:
           publish_dir: ${{ runner.temp }}/qodana/results/report
           publish_branch: gh-pages
           destination_dir: ./qodana
+  document:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+      - name: Generate Dokka documentation
+        run: ./gradlew dokkaHTML
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/dokkaHtmlOutput
+          publish_branch: gh-pages
+          destination_dir: ./dokka

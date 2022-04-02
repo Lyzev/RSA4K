@@ -12,9 +12,99 @@
     <img src="https://img.shields.io/github/contributors/Lyzev/RSA4K" alt="GitHub contributors"/>
 </div>
 
-# Project is WIP!!!
+## Usage
 
-Usage will be explained when implementation is working.
+[![](https://jitpack.io/v/Lyzev/RSA4K.svg?label=Release)](https://jitpack.io/#Lyzev/RSA4K)
+
+### Import
+
+Replace `${version}` with the current version!
+
+<details>
+        <summary>Gradle KTS</summary>
+
+```kotlin
+repositories {
+    maven("https://jitpack.io")
+}
+
+dependencies {
+    implementation("com.github.Lyzev:RSA4K:${version}")
+}
+```
+
+</details>
+
+<details>
+        <summary>Gradle Groovy</summary>
+
+```
+repositories {
+	maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.Lyzev:RSA4K:${version}'
+}
+```
+
+</details>
+
+<details>
+        <summary>Maven</summary>
+
+```
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+
+<dependencies>
+    <dependency>
+        <groupId>com.github.Lyzev</groupId>
+        <artifactId>RSA4K</artifactId>
+        <version>${version}</version>
+    </dependency>
+</dependencies>
+```
+
+</details>
+
+<details>
+        <summary>Raw Jar</summary>
+
+1. Go to the [release page](https://github.com/Lyzev/RSA4K/releases).
+2. Download KBruteforce-${version}.jar.
+3. Add the jar to your classpath.
+
+</details>
+
+### Example
+
+```kotlin
+fun main() {
+    val keys = RSAKeyFactory.generateKeyPair()
+    val cipher = RSA(keys.first, keys.second)
+    val msg = "Test"
+    val encrypted = cipher.encrypt(msg.encodeToByteArray())
+    val decrypted = String(cipher.decrypt(encrypted!!))
+    println("public exponent -> ${keys.first.exp}")
+    println("private exponent -> ${keys.second.exp}")
+    println("modulus -> ${keys.first.mod}")
+    println("encrypted -> $encrypted")
+    println("decrypted -> $decrypted")
+}
+```
+
+## Documentation
+
+You can find the documentation [here](https://lyzev.github.io/RSA4K/dokka).
+
+## Code Quality Monitoring
+
+You can find the qodana report [here](https://lyzev.github.io/RSA4K/qodana).
 
 ## Bugs and Suggestions
 
