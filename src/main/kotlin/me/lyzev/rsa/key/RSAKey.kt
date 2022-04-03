@@ -2,6 +2,9 @@ package me.lyzev.rsa.key
 
 import java.math.BigInteger
 
+/**
+ * Represents an RSA key.
+ */
 abstract class RSAKey(val mod: BigInteger, val exp: Int) {
 
     /**
@@ -11,10 +14,18 @@ abstract class RSAKey(val mod: BigInteger, val exp: Int) {
      */
     abstract fun isValid(): Boolean
 
+    /**
+     * Encodes the key to a string.
+     *
+     * @return encoded key
+     */
     abstract fun encodeToString(): String
 
+    /**
+     * Checks if the key is valid.
+     */
     init {
-        if (isValid())
-            throw IllegalArgumentException("The provided mod or exp isn't valid. [$mod, $exp]")
+        if (!isValid())
+            throw IllegalArgumentException("Invalid key")
     }
 }

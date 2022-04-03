@@ -5,14 +5,25 @@ import me.lyzev.rsa.key.types.RSAPublicKey
 import me.lyzev.rsa.util.MathHelper
 import java.math.BigInteger
 import java.security.SecureRandom
-import java.util.*
 
-
+/**
+ * A factory for RSA keys.
+ *
+ * @author Lyzev
+ * @see RSAPrivateKey
+ * @see RSAPublicKey
+ * @see RSAKey
+ */
 object RSAKeyFactory {
 
-    val primes = sieveOfEratosthenes(2000)
+    private val primes = MathHelper.sieveOfEratosthenes(2000) // list of primes up to 2000
 
-    fun generateKeyPair(): Pair<RSAPublicKey, RSAPrivateKey> {
+    /**
+     * Generates a new RSA key pair.
+     *
+     * @return a new RSA key pair
+     */
+    fun genKeyPair(): Pair<RSAPublicKey, RSAPrivateKey> {
         val random1 = SecureRandom.getInstanceStrong().nextInt(primes.size)
         val random2 = if (SecureRandom.getInstanceStrong().nextBoolean())
             random1 - 1 - SecureRandom.getInstanceStrong().nextInt(random1)
@@ -35,7 +46,6 @@ object RSAKeyFactory {
         var d = 0
         for (i in 0..9) {
             val multiOfPhi: Int = 1 + i * phi
-            // d is for private key exponent
             if (multiOfPhi % e == 0) {
                 d = multiOfPhi / e
                 break
@@ -46,25 +56,38 @@ object RSAKeyFactory {
     }
 
     /**
-     * A list of primes. (Source: https://github.com/eugenp/tutorials/blob/master/java-numbers-2/src/main/java/com/baeldung/prime/PrimeGenerator.java)
+     * Generates key from encoded format.
+     *
+     * @return a RSA key
      */
-    private fun sieveOfEratosthenes(n: Int): List<Int> {
-        val prime = BooleanArray(n + 1) { true }
-        var p = 2
-        while (p * p <= n) {
-            if (prime[p]) {
-                var i = p * 2
-                while (i <= n) {
-                    prime[i] = false
-                    i += p
-                }
-            }
-            p++
-        }
-        val primeNumbers = LinkedList<Int>()
-        for (i in 2..n)
-            if (prime[i])
-                primeNumbers.add(i)
-        return primeNumbers
+    fun genKey(`in`: String): RSAKey {
+        return if (`in`.startsWith("RSA-PUBLIC-KEY"))
+            genPublicKey(`in`)
+        else if (`in`.startsWith("RSA-PUBLIC-KEY"))
+            genPrivateKey(`in`)
+        else
+            throw IllegalArgumentException("Invalid key format")
+    }
+
+    /**
+     * Generates public key from encoded format.
+     *
+     * @return a RSA public key
+     */
+    fun genPublicKey(`in`: String): RSAPublicKey {
+        val n = BigInteger.valueOf(`in`.split(":")[1].toLong())
+        val e = `in`.split(":")[2].toInt()
+        return RSAPublicKey(n, e)
+    }
+
+    /**
+     * Generates private key from encoded format.
+     *
+     * @return a RSA private key
+     */
+    fun genPrivateKey(`in`: String): RSAPrivateKey {
+        val n = BigInteger.valueOf(`in`.split(":")[1].toLong())
+        val d = `in`.split(":")[2].toInt()
+        return RSAPrivateKey(n, d)
     }
 }
