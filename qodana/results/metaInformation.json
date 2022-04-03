@@ -1,13 +1,13 @@
 {
-  "total": 0,
+  "total": 1,
   "tools inspection": {
-    "Code Inspection": 0
+    "Code Inspection": 1
   },
   "attributes": {
     "vcs": {
       "sarifIdea": {
         "repositoryUri": "https://github.com/Lyzev/RSA4K",
-        "revisionId": "31f9ee8c6c02cc5e7d0c4565fe8cbc896f6756de",
+        "revisionId": "8fde7ea2a7baaa2fe0c824325abf62a68c615ff5",
         "branch": "master"
       }
     },

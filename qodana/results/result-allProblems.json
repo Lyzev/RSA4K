@@ -1,1 +1,29 @@
-{"version":"3","listProblem":[]}
+{"version":"3","listProblem":[{
+  "tool": "Code Inspection",
+  "category": "Probable bugs",
+  "type": "Leaking 'this' in constructor",
+  "severity": "High",
+  "comment": "Calling non-final function isValid in constructor",
+  "detailsInfo": "Reports unsafe operations with `this` during object construction including:\n\n* Accessing a non-final property during class initialization: from a constructor or property initialization\n* Calling a non-final function during class initialization\n* Using `this` as a function argument in a constructor of a non-final class\n\n\nIf other classes inherit from the given class,\nthey may not be fully initialized at the moment when an unsafe operation is carried out.\n\n**Example:**\n\n\n      abstract class Base {\n          val code = calculate()\n          abstract fun calculate(): Int\n      }\n\n      class Derived(private val x: Int) : Base() {\n          override fun calculate() = x\n      }\n\n      fun testIt() {\n          println(Derived(42).code) // Expected: 42, actual: 0\n      }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "src/main/kotlin/me/lyzev/rsa/key/RSAKey.kt",
+      "language": "kotlin",
+      "line": 17,
+      "offset": 13,
+      "length": 7,
+      "code": {
+        "startLine": 15,
+        "length": 7,
+        "offset": 24,
+        "surroundingCode": "\n    init {\n        if (isValid())\n            throw IllegalArgumentException(\"The provided mod or exp isn't valid. [$mod, $exp]\")\n    }"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "RSA4K.main",
+    "inspectionName": "LeakingThis"
+  },
+  "hash": "30a0c05be9d112245a02d8ef903d16881fa0323abde1a2007116a6e2063226bf"
+}]}
