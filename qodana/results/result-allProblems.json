@@ -10,14 +10,14 @@
       "type": "file",
       "path": "src/main/kotlin/me/lyzev/rsa/key/RSAKey.kt",
       "language": "kotlin",
-      "line": 17,
-      "offset": 13,
+      "line": 28,
+      "offset": 14,
       "length": 7,
       "code": {
-        "startLine": 15,
+        "startLine": 26,
         "length": 7,
-        "offset": 24,
-        "surroundingCode": "\n    init {\n        if (isValid())\n            throw IllegalArgumentException(\"The provided mod or exp isn't valid. [$mod, $exp]\")\n    }"
+        "offset": 32,
+        "surroundingCode": "     */\n    init {\n        if (!isValid())\n            throw IllegalArgumentException(\"Invalid key\")\n    }"
       }
     }
   ],
@@ -25,5 +25,5 @@
     "module": "RSA4K.main",
     "inspectionName": "LeakingThis"
   },
-  "hash": "30a0c05be9d112245a02d8ef903d16881fa0323abde1a2007116a6e2063226bf"
+  "hash": "c205001f4e1a5908d018f9d233ad8ee31e058c698d35a3703926a4edd8b83db2"
 }]}
