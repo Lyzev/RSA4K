@@ -76,7 +76,7 @@ dependencies {
         <summary>Raw Jar</summary>
 
 1. Go to the [release page](https://github.com/Lyzev/RSA4K/releases).
-2. Download RSA4K-${version}.jar.
+2. Download RSA4K-${version}-all.jar.
 3. Add the jar to your classpath.
 
 </details>
