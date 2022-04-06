@@ -75,7 +75,7 @@
         "jrt:///root/.jdks/corretto-16.0.2!/jdk.zipfs"
       ],
       "sdkType": "JavaSDK",
-      "sdkVersion": "java version \"16.0.2\""
+      "sdkVersion": "Amazon Corretto version 16.0.2"
     }
   ]
 }
