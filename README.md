@@ -115,5 +115,5 @@ Bug reports and suggestions should be made in this repo's [issue tracker](https:
 using the templates provided. Please provide as much information as you can to best help us understand your issue and
 give a better chance of it being resolved.
 
-## Important
-Please note that this repository is for educational purposes only. There may be some security issues, because the author isn't a professional cryptologist. It#s recommend to use the rsa implementation of java.
+## Disclaimer
+Please note that this repository is for educational purposes only. There may be some security issues, because the author isn't a professional cryptologist. It's recommend to use the rsa implementation of java.
